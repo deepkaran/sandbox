@@ -1,4 +1,4 @@
-##Design Overview for Indexing
+##Secondary Index Design Document
 
 
 ###Overview
@@ -34,6 +34,7 @@ This document describes the High Level Design for Secondary Indexes. It also des
 ![KV And Index Cluster](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagram.svg)
 
 ###Deployment Diagram
+![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/Deployment.svg)
 
 ###Bootstrap Sequence
 
@@ -46,7 +47,9 @@ This document describes the High Level Design for Secondary Indexes. It also des
 ###Mutation Workflow
 
 * Insert/Update Mutation Workflow
+![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/InsertWorkflow.svg)
 * Delete Mutation Workflow
+![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/DeleteWorkflow.svg)
 
 ###Query Workflow
 
@@ -56,33 +59,36 @@ This document describes the High Level Design for Secondary Indexes. It also des
 * Nodes (Meta) Request Workflow
 
 ###Partition Management
-  Milestone1 will have Key-based partitioning support. 
-  [John's Doc for Partitioning](https://docs.google.com/document/d/1eF3rJ63iv1awnfLkAQLmVmILBdgD4Vzc0IsCpTxmXgY/edit)
-
-###Storage Management
-
-
-###Cluster Management
-
-
-###Metadata Management
-
-
-
-
-###Recovery
-[Recovery Document](https://docs.google.com/document/d/1rNJSVs80TtvY0gpoebsBwzhqWRBJnieSuLTnxuDzUTQ/edit) 
-
-###Replication
-
-
-###Rebalance
+* Milestone1 will have Key-based partitioning support. 
+  * [John's Doc for Partitioning](https://docs.google.com/document/d/1eF3rJ63iv1awnfLkAQLmVmILBdgD4Vzc0IsCpTxmXgY/edit)
 
 ###Communication Protocols
 
 * Router and Indexer Protocol
 * Query and Indexer Protocol
-  [Existing REST Based Protocol](https://docs.google.com/document/d/1j9D4ryOi1d5CNY5EkoRuU_fc5Q3i_QwIs3zU9uObbJY/edit)
+  * [Existing REST Based Protocol](https://docs.google.com/document/d/1j9D4ryOi1d5CNY5EkoRuU_fc5Q3i_QwIs3zU9uObbJY/edit)
+
+###Storage Management
+* Persistent Snapshot 
+
+###Cluster Management
+* Master Election
+* Communication with ns_server
+
+###Metadata Management
+* Metadata Replication
+* Metadata Recovery
+
+###Recovery
+* [Recovery Document](https://docs.google.com/document/d/1rNJSVs80TtvY0gpoebsBwzhqWRBJnieSuLTnxuDzUTQ/edit) 
+
+###Replication
+* Replication Strategy
+* Failure Recovery
+
+###Rebalance
+* Rebalance Strategy
+* Failure Recovery
 
 ###Terminology
 
