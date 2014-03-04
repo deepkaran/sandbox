@@ -35,11 +35,29 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 ##Deployement Diagram
 
+##Bootstrap Sequence
+
+* System Bootstrap
+* Indexer Restart Bootstrap
+* Projector Restart Bootstrap
+* Router Restart Bootstrap
+* Index Manager Restart Bootstrap
+
 ##Mutation Workflow
 
+* Insert/Update Mutation Workflow
+* Delete Mutation Workflow
 
 ##Query Workflow
 
+* Create/Drop DDL Workflow
+* Scan Request Workflow
+* Stats Request Workflow
+* Nodes (Meta) Request Workflow
+
+##Partition Management
+  Milestone1 will have Key-based partitioning support. 
+  [John's Doc for Partitioning](https://docs.google.com/document/d/1eF3rJ63iv1awnfLkAQLmVmILBdgD4Vzc0IsCpTxmXgY/edit)
 
 ##Storage Management
 
@@ -48,6 +66,8 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 
 ##Metadata Management
+
+
 
 
 ##Recovery
@@ -68,3 +88,5 @@ This document describes the High Level Design for Secondary Indexes. It also des
 - Catchup Queue
 - Stability Snapshot
 - Persistent Snapshot
+- Partition
+- Slice
