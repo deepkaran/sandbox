@@ -1,11 +1,11 @@
-#Design Overview for Indexing
+##Design Overview for Indexing
 
 
-##Overview
+###Overview
 
 This document describes the High Level Design for Secondary Indexes. It also describes the deployement options supported.
 
-##Components
+###Components
 
 
 - __Projector__
@@ -30,12 +30,12 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 
 
-##System Diagram
+###System Diagram
 ![KV And Index Cluster](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagram.svg)
 
-##Deployement Diagram
+###Deployment Diagram
 
-##Bootstrap Sequence
+###Bootstrap Sequence
 
 * System Bootstrap
 * Indexer Restart Bootstrap
@@ -43,43 +43,48 @@ This document describes the High Level Design for Secondary Indexes. It also des
 * Router Restart Bootstrap
 * Index Manager Restart Bootstrap
 
-##Mutation Workflow
+###Mutation Workflow
 
 * Insert/Update Mutation Workflow
 * Delete Mutation Workflow
 
-##Query Workflow
+###Query Workflow
 
 * Create/Drop DDL Workflow
 * Scan Request Workflow
 * Stats Request Workflow
 * Nodes (Meta) Request Workflow
 
-##Partition Management
+###Partition Management
   Milestone1 will have Key-based partitioning support. 
   [John's Doc for Partitioning](https://docs.google.com/document/d/1eF3rJ63iv1awnfLkAQLmVmILBdgD4Vzc0IsCpTxmXgY/edit)
 
-##Storage Management
+###Storage Management
 
 
-##Cluster Management
+###Cluster Management
 
 
-##Metadata Management
+###Metadata Management
 
 
 
 
-##Recovery
+###Recovery
 [Recovery Document](https://docs.google.com/document/d/1rNJSVs80TtvY0gpoebsBwzhqWRBJnieSuLTnxuDzUTQ/edit) 
 
-##Replication
+###Replication
 
 
-##Rebalance
+###Rebalance
 
+###Communication Protocols
 
-##Terminology
+* Router and Indexer Protocol
+* Query and Indexer Protocol
+  [Existing REST Based Protocol](https://docs.google.com/document/d/1j9D4ryOi1d5CNY5EkoRuU_fc5Q3i_QwIs3zU9uObbJY/edit)
+
+###Terminology
 
 - High-Watermark Timestamp
 - Stability Timestamp
