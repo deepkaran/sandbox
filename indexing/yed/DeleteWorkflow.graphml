@@ -15,7 +15,6 @@
   <graph edgedefault="directed" id="G">
     <data key="d7"/>
     <node id="n0">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="689.6666666666666" width="9.0" x="193.0" y="175.75"/>
@@ -33,7 +32,6 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="40.0" width="80.0" x="158.0" y="105.75"/>
@@ -50,7 +48,6 @@
       </data>
     </node>
     <node id="n2">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="698.4166666666667" width="9.0" x="365.0" y="175.75"/>
@@ -68,7 +65,6 @@
       </data>
     </node>
     <node id="n3">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="40.0" width="80.0" x="330.0" y="105.75"/>
@@ -85,7 +81,6 @@
       </data>
     </node>
     <node id="n4">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="688.1666666666666" width="9.0" x="528.0" y="181.0"/>
@@ -103,7 +98,6 @@
       </data>
     </node>
     <node id="n5">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="40.0" width="80.0" x="493.0" y="104.75"/>
@@ -120,7 +114,6 @@
       </data>
     </node>
     <node id="n6">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="697.0833333333334" width="9.0" x="900.0" y="173.5"/>
@@ -138,7 +131,6 @@
       </data>
     </node>
     <node id="n7">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="40.0" width="80.0" x="865.0" y="103.5"/>
@@ -156,7 +148,6 @@ Manager<y:LabelModel>
       </data>
     </node>
     <node id="n8">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="215.25" y="180.75"/>
@@ -174,7 +165,6 @@ Manager<y:LabelModel>
       </data>
     </node>
     <node id="n9">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="215.5" y="216.25"/>
@@ -192,13 +182,12 @@ Manager<y:LabelModel>
       </data>
     </node>
     <node id="n10">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="30.0" width="102.0" x="395.25" y="282.5"/>
+          <y:Geometry height="30.0" width="102.0" x="382.6604046242775" y="283.6445086705203"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="129.876953125" x="-13.9384765625" y="-1.1328125">5. Decide Subscribers
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="112.720703125" x="-5.3603515625" y="-1.1328125">5. Decide Indexers
 based on IndexId<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -211,18 +200,17 @@ based on IndexId<y:LabelModel>
       </data>
     </node>
     <node id="n11">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="393.0" y="436.75"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="internal" modelPosition="c" textColor="#000000" visible="true" width="4.0" x="49.0" y="13.0"/>
           <y:Shape type="rectangle3d"/>
         </y:ShapeNode>
       </data>
     </node>
     <node id="n12">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="33.75" width="102.0" x="551.5" y="447.0"/>
@@ -241,7 +229,6 @@ Mutation Queue<y:LabelModel>
       </data>
     </node>
     <node id="n13">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="940.5" y="535.25"/>
@@ -261,7 +248,6 @@ Reached<y:LabelModel>
       </data>
     </node>
     <node id="n14">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="564.0" y="494.5"/>
@@ -280,13 +266,13 @@ Watermark Timestamp<y:LabelModel>
       </data>
     </node>
     <node id="n15">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="578.0" y="681.5"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="164.04296875" x="-31.021484375" y="-1.1328125">11. Persist MutationQ.
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="164.04296875" x="-31.021484375" y="-8.19921875">11. Persist MutationQ.
+(Apply If Key Exists)
 Update Stability Timestamp<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -299,7 +285,6 @@ Update Stability Timestamp<y:LabelModel>
       </data>
     </node>
     <node id="n16">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="927.5" y="587.75"/>
@@ -318,7 +303,6 @@ to all Indexers<y:LabelModel>
       </data>
     </node>
     <node id="n17">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="554.75" y="722.75"/>
@@ -336,7 +320,6 @@ to all Indexers<y:LabelModel>
       </data>
     </node>
     <node id="n18">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="925.5" y="794.5"/>
@@ -355,7 +338,6 @@ Timestamp<y:LabelModel>
       </data>
     </node>
     <node id="n19">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="688.1666666666666" width="9.0" x="715.5" y="179.75"/>
@@ -373,7 +355,6 @@ Timestamp<y:LabelModel>
       </data>
     </node>
     <node id="n20">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.flowchart.process">
           <y:Geometry height="40.0" width="80.0" x="680.5" y="103.5"/>
@@ -390,13 +371,13 @@ Timestamp<y:LabelModel>
       </data>
     </node>
     <node id="n21">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="762.5" y="682.75"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="32.265625" modelName="custom" textColor="#000000" visible="true" width="164.04296875" x="-31.021484375" y="-1.1328125">11. Persist MutationQ.
+          <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="164.04296875" x="-31.021484375" y="-8.19921875">11. Persist MutationQ.
+(Apply If Key Exists)
 Update Stability Timestamp<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -409,7 +390,6 @@ Update Stability Timestamp<y:LabelModel>
       </data>
     </node>
     <node id="n22">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="734.25" y="720.25"/>
@@ -427,14 +407,13 @@ Update Stability Timestamp<y:LabelModel>
       </data>
     </node>
     <node id="n23">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="393.25" y="338.25"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="left" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="46.3984375" modelName="custom" textColor="#000000" visible="true" width="148.328125" x="-16.1640625" y="-8.19921875">6. Send DELETE message
-to all subscribers
+to all indexers
 for this index<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
@@ -447,7 +426,6 @@ for this index<y:LabelModel>
       </data>
     </node>
     <node id="n24">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="33.75" width="102.0" x="743.5" y="449.5"/>
@@ -466,7 +444,6 @@ Mutation Queue<y:LabelModel>
       </data>
     </node>
     <node id="n25">
-      <data key="d5"/>
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="30.0" width="102.0" x="756.0" y="497.0"/>
@@ -485,7 +462,6 @@ Watermark Timestamp<y:LabelModel>
       </data>
     </node>
     <edge id="e0" source="n6" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:ArcEdge>
           <y:Path sx="-6.0" sy="136.70650227864576" tx="4.5010633030915415" ty="136.86318701091614">
@@ -498,7 +474,6 @@ Watermark Timestamp<y:LabelModel>
       </data>
     </edge>
     <edge id="e1" source="n0" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:ArcEdge>
           <y:Path sx="4.533058284465426" sy="-262.80390002252193" tx="-6.0" ty="-266.07735188802087">
@@ -511,7 +486,6 @@ Watermark Timestamp<y:LabelModel>
       </data>
     </edge>
     <edge id="e2" source="n2" target="n4">
-      <data key="d9"/>
       <data key="d10">
         <y:ArcEdge>
           <y:Path sx="4.481501429583716" sy="-125.10998770687831" tx="-4.504669429111118" ty="-125.65311764040376">
@@ -524,7 +498,6 @@ Watermark Timestamp<y:LabelModel>
       </data>
     </edge>
     <edge id="e3" source="n4" target="n6">
-      <data key="d9"/>
       <data key="d10">
         <y:ArcEdge>
           <y:Path sx="6.0" sy="251.86100260416674" tx="-4.503707492968829" ty="252.16808843433478">
@@ -537,7 +510,6 @@ Watermark Timestamp<y:LabelModel>
       </data>
     </edge>
     <edge id="e4" source="n6" target="n19">
-      <data key="d9"/>
       <data key="d10">
         <y:ArcEdge>
           <y:Path sx="-4.544921875" sy="115.50288899739576" tx="4.471747074146492" ty="113.89931506797325">
@@ -550,7 +522,6 @@ Watermark Timestamp<y:LabelModel>
       </data>
     </edge>
     <edge id="e5" source="n19" target="n6">
-      <data key="d9"/>
       <data key="d10">
         <y:ArcEdge>
           <y:Path sx="4.536468168069746" sy="265.6697055883966" tx="-4.494280465383667" ty="265.1518999547093">
@@ -563,7 +534,6 @@ Watermark Timestamp<y:LabelModel>
       </data>
     </edge>
     <edge id="e6" source="n2" target="n19">
-      <data key="d9"/>
       <data key="d10">
         <y:ArcEdge>
           <y:Path sx="4.454304893745643" sy="-100.831951281013" tx="-5.25" ty="-102.91066487630201">
