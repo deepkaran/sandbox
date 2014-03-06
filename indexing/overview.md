@@ -58,7 +58,7 @@ This document describes the High Level Design for Secondary Indexes. It also des
 ###Communication Protocols
 
 * Projector and Ep-Engine Protocol
-  * Projector will use the [UPR protocol](https://github.com/couchbaselabs/cbupr/blob/master/index.md) to talk to Ep-engine in KV. 
+  * [UPR protocol](https://github.com/couchbaselabs/cbupr/blob/master/index.md) will be used to talk to Ep-engine in KV. 
 
 * Router and Indexer Protocol
 * Query and Indexer Protocol
