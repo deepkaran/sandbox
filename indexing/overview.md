@@ -36,8 +36,8 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 ###Execution Flow
 
-* Mutation Execution Flow[markdown/mutation.md]
-* Query Execution Flow[markdow/query.md]
+* [Mutation Execution Flow](markdown/mutation.md)
+* [Query Execution Flow](markdow/query.md)
 
 ###Bootstrap Sequence
 
@@ -57,11 +57,9 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 ###Communication Protocols
 
-* Projector and Ep-Engine Protocol 
+* Projector and Ep-Engine Protocol
+  * Projector will use the [UPR protocol](https://github.com/couchbaselabs/cbupr/blob/master/index.md) to talk to Ep-engine in KV. 
 
-  Projector will use the UPR protocol to talk to Ep-engine in KV. 
-  [UPR Design Specs](https://github.com/couchbaselabs/cbupr/blob/master/index.md) are here.
-  
 * Router and Indexer Protocol
 * Query and Indexer Protocol
   * [Existing REST Based Protocol](https://docs.google.com/document/d/1j9D4ryOi1d5CNY5EkoRuU_fc5Q3i_QwIs3zU9uObbJY/edit)
@@ -90,12 +88,4 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 ###Terminology
 
-- High-Watermark Timestamp
-- Stability Timestamp
-- Restart Timestamp
-- Mutation Queue
-- Catchup Queue
-- Stability Snapshot
-- Persistent Snapshot
-- Partition
-- Slice
+* [Terminology Document](markdown/terminology.md)
