@@ -30,10 +30,13 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 
 ###System Diagram
-![KV And Index Cluster](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagram.svg)
+
+- [KV-Index System Diagram](markdown/system.md)
+- Query-Index System Diagram
 
 ###Deployment Diagram
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/Deployment.svg)
+
+- [Deployment Options](markdown/deployment.md)
 
 ###Bootstrap Sequence
 
