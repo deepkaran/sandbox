@@ -19,20 +19,24 @@ B2 - I3, I4
 
 ![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagramMultipleBuckets.svg)
 
-###Annotations
+####Annotations
 
 *HWT* - High-Watermark Timestamp<br>
 *ST* - Stability Timestamp<br>
 *FI* - Forward Index<br>
 *BI* - Back Index<br>
 
-###Highlights
+####Highlights
 - Indexer maintains HWT and ST at per bucket level on each node. In this case I1 and I2 share HWT+ST as these are from same bucket. I3 has its own copy. 
 - Index Manager maintains ST for each bucket. 
 - There is a single Mutation Queue(Catchup Queue) per node. 
 - Router sends periodic SYNC messages to Index Manager (based on snapshot markers?)
 
-###Open Questions
+####Open Questions
 - How does Index Manager get the "Sync" messages to decide on the next Stability Timestamp
 - How does Indexer get the update topology information to service Scan request? Index Manager exposes an API or from the replicated metadata file directly?
 - Does the Mutation/Catchup Queue needs to be per bucket as well?
+
+
+###KV-Index System Diagram (Single Bucket/Index)
+![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagram.svg)
