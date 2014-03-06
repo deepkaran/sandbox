@@ -34,9 +34,10 @@ This document describes the High Level Design for Secondary Indexes. It also des
 - [KV-Index System Diagram](markdown/system.md)
 - Query-Index System Diagram
 
-###Deployment Diagram
+###Execution Flow
 
-- [Deployment Options](markdown/deployment.md)
+* Mutation Workflow[markdown/mutation.md]
+* Query Workflow[markdow/query.md]
 
 ###Bootstrap Sequence
 
@@ -46,19 +47,9 @@ This document describes the High Level Design for Secondary Indexes. It also des
 * Router Restart Bootstrap
 * Index Manager Restart Bootstrap
 
-###Mutation Workflow
+###Deployment
 
-* Insert/Update Mutation Workflow
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/InsertWorkflow.svg)
-* Delete Mutation Workflow
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/DeleteWorkflow.svg)
-
-###Query Workflow
-
-* Create/Drop DDL Workflow
-* Scan Request Workflow
-* Stats Request Workflow
-* Nodes (Meta) Request Workflow
+- [Deployment Options](markdown/deployment.md)
 
 ###Partition Management
 * Milestone1 will have Key-based partitioning support. 
