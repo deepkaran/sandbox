@@ -37,7 +37,7 @@ This document describes the High Level Design for Secondary Indexes. It also des
 ###Execution Flow
 
 * [Mutation Execution Flow](markdown/mutation.md)
-* [Query Execution Flow](markdow/query.md)
+* [Query Execution Flow](markdown/query.md)
 
 ###Bootstrap Sequence
 
