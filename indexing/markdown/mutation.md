@@ -3,7 +3,7 @@
 This document describes how KV mutations are received and processed by the Secondary Indexes.
 
 ####Insert/Update Mutation
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/InsertWorkflow.svg)
+![](https://rawgithub.com/couchbase/indexing/master/secondary/docs/design/images/InsertWorkflow.svg)
 
 
 Insert/Update Mutation Workflow can be divided into 3 phases:
@@ -48,7 +48,7 @@ These common timestamps are necessary to prevent problems such as [Tearing Reads
 
 
 ####Delete Mutation
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/DeleteWorkflow.svg)
+![](https://rawgithub.com/couchbase/indexing/master/secondary/docs/design/images/DeleteWorkflow.svg)
 
 Delete Mutations follow similar workflow as Insert/Update Mutation:
 
