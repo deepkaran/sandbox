@@ -26,6 +26,17 @@ B2 - I3, I4
 *FI* - Forward Index<br>
 *BI* - Back Index<br>
 
+1. Data Mutations via UPR are sent to Projector which subscribes for the active vbuckets on a node. Projector runs map functions based on Index Definitions and outputs secondary key versions.
+2. Secondary Key versions are sent to Router component. Based on index distribution/partitioning topology it determines which Indexer node should receive the key version. 
+3. Router has a guaranted delivery component called Transporter which handles the actual network transport. A single mutation can result in multiple messages to be sent to multiple index nodes. [More Details](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/mutation.md).
+4. Router can occasionally send SYNC messages to Index Manager which enables it to calculate next Stability Timestamp for all Indexers.
+5. For normal workflow, Indexer will accept and store the mutations in Mutation Queue. These mutations get processed once Index Manager decides to generate a Stability Timestamp.
+6. For Rollback scenarios, Indexer will store the mutations in CatchUp Queue. For complete details of rollback workflow, see [Recovery](Add Link Here)
+7. Index Manager master synchronizes with its replica to synchronously replicate Index Definition metadata, Recovery context etc.
+8. Index Manager communicates with all Indexers to announce new Stability Timestamp, Rollback Mode Init, collect HW timestamps for recovery etc.
+9. Local Persistence for Index Manager. 
+10. Local Persistence for Indexer for all secondary key versions. All Persistent Snapshots are stored locally.
+
 ####Highlights
 - Indexer maintains HWT and ST at per bucket level on each node. In this case I1 and I2 share HWT+ST as these are from same bucket. I3 has its own copy. 
 - Index Manager maintains ST for each bucket. 
@@ -34,7 +45,7 @@ B2 - I3, I4
 
 ####Open Questions
 - How does Index Manager get the "Sync" messages to decide on the next Stability Timestamp
-- How does Indexer get the update topology information to service Scan request? Index Manager exposes an API or from the replicated metadata file directly?
+- How does Indexer get the updated topology information to service Scan request? Index Manager exposes an API or from the replicated metadata file directly?
 - Does the Mutation/Catchup Queue needs to be per bucket as well?
 
 
