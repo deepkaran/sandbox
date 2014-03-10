@@ -10,9 +10,9 @@ Insert/Update Mutation Workflow can be divided into 3 phases:
 
 __Key Distribution Phase(Step 1-7)__
 
-During this phase, [Projector](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/terminology.md) receives mutations from [UPR](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/terminology.md), 
+During this phase, [Projector](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/overview.md#components) receives mutations from [UPR](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/terminology.md), 
 runs mapping functions and extracts secondary keys. 
-These are then sent to [Router](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/terminology.md) to be sent to individual [Indexers](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/terminology.md) running on different nodes.
+These are then sent to [Router](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/overview.md#components) to be sent to individual [Indexers](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/overview.md#components) running on different nodes.
 
 An important thing to note here is that an INSERT/UPDATE mutation causes 2 messages(Step 6 and 7).
 The DELETE msg is to ensure that the old secondary key entry gets deleted if the partition key of 
@@ -30,7 +30,7 @@ The [High-Watermark Timestamp](https://github.com/couchbase/indexing/blob/master
 
 __Stable Persistence Phase(Step 12-16)__
 
-[Index Manager](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/terminology.md) (based on the SYNC messages received and some algorithm) decides to create [Stability Timestamp](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/terminology.md).
+[Index Manager](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/overview.md#components) (based on the SYNC messages received and some algorithm) decides to create [Stability Timestamp](https://github.com/couchbase/indexing/blob/master/secondary/docs/design/markdown/terminology.md).
 This decision along with the timestamp is broadcasted to all Indexers. 
 This triggers the processing of Mutation Queue at Indexer. Message are applied/skipped as required. 
 In this example, Indexer1 will skip the DELETE msg received in Step10 since it has applied the INSERT already.
