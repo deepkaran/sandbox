@@ -17,7 +17,7 @@ B2 - I3, I4
 **BLACK** arrows represent flow of Data Messages(key versions)<br>
 **RED** arrows represent Meta Messages
 
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagramMultipleBuckets.svg)
+![](https://rawgithub.com/couchbase/indexing/master/secondary/docs/design/images/SystemDiagramMultipleBuckets.svg)
 
 ####Annotations
 
@@ -50,4 +50,4 @@ B2 - I3, I4
 
 
 ###KV-Index System Diagram (Single Bucket/Index)
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagram.svg)
+![](https://rawgithub.com/couchbase/indexing/master/secondary/docs/design/images/SystemDiagram.svg)
