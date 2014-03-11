@@ -555,17 +555,17 @@
       <rect fill="none" x="538.0448" width="173.75" height="269.0625" y="918.4334" clip-path="url(#clipPath2)"/>
       <text x="1418.9052" xml:space="preserve" font-size="18" y="663.9357" clip-path="url(#clipPath2)" stroke="none">Indexer Node1</text>
       <rect fill="none" x="1243.3729" width="480" height="417.5" y="630.0272" clip-path="url(#clipPath2)"/>
-      <text x="746.6037" xml:space="preserve" y="1041.2054" clip-path="url(#clipPath2)" stroke="none">1</text>
-      <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="750.3976" cy="1036.6703"/>
+      <text x="748.5568" xml:space="preserve" y="1017.768" clip-path="url(#clipPath2)" stroke="none">1</text>
+      <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="752.3508" cy="1013.2328"/>
       <text x="1127.8909" xml:space="preserve" y="863.5438" clip-path="url(#clipPath2)" stroke="none">2</text>
       <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="1131.6848" cy="859.0087"/>
-      <text x="1928.7557" xml:space="preserve" y="984.3299" clip-path="url(#clipPath2)" stroke="none">3</text>
+      <text x="1928.7557" xml:space="preserve" y="984.3299" clip-path="url(#clipPath2)" stroke="none">6</text>
       <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="1932.5497" cy="979.7947"/>
-      <text x="1645.7919" xml:space="preserve" y="984.5269" clip-path="url(#clipPath2)" stroke="none">6</text>
+      <text x="1645.7919" xml:space="preserve" y="984.5269" clip-path="url(#clipPath2)" stroke="none">4</text>
       <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="1649.5859" cy="979.9918"/>
-      <text x="1573.3593" xml:space="preserve" y="1429.724" clip-path="url(#clipPath2)" stroke="none">6</text>
+      <text x="1573.3593" xml:space="preserve" y="1429.724" clip-path="url(#clipPath2)" stroke="none">4</text>
       <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="1577.1532" cy="1425.1889"/>
-      <text x="1845.3835" xml:space="preserve" y="950.7416" clip-path="url(#clipPath2)" stroke="none">4</text>
+      <text x="1845.3835" xml:space="preserve" y="950.7416" clip-path="url(#clipPath2)" stroke="none">5</text>
       <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="1849.1775" cy="946.2065"/>
       <text x="1543.639" xml:space="preserve" y="1197.5652" clip-path="url(#clipPath2)" stroke="none">5</text>
       <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="1547.433" cy="1193.03"/>
@@ -642,6 +642,8 @@
       <rect fill="none" x="2136.56" width="76.25" height="20" y="829.658" clip-path="url(#clipPath2)"/>
       <text x="1818.6914" xml:space="preserve" y="763.2793" clip-path="url(#clipPath2)" stroke="none">7</text>
       <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="1822.4854" cy="758.7441"/>
+      <text x="750.5481" xml:space="preserve" y="1082.7742" clip-path="url(#clipPath2)" stroke="none">9</text>
+      <ellipse rx="11.922" fill="none" ry="10.3829" clip-path="url(#clipPath2)" cx="754.342" cy="1078.239"/>
       <path fill="none" d="M1509.9265 760.7205 L1511.1772 761.6851 L1519.6493 769.8426 L1526.8907 778.6746 L1532.9019 788.1812 L1537.6824 798.3621 L1540.7854 807.8503 L1540.8052 807.9483" clip-path="url(#clipPath2)"/>
       <path d="M1542.55 815.7557 L1544.8124 802.9541 L1540.5872 806.9724 L1535.0532 805.1351 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M1446.4906 961.3393 L1447.0677 987.5076" clip-path="url(#clipPath2)"/>
@@ -664,8 +666,10 @@
       <path d="M924.1547 1024.9531 L937.0059 1022.9913 L931.8449 1020.2775 L931.8107 1014.4467 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M924.1813 1004.5446 L1133.0017 874.4872 L1383.9591 722.5623" clip-path="url(#clipPath2)"/>
       <path d="M1390.8027 718.4193 L1377.9479 720.3565 L1383.1036 723.0801 L1383.1267 728.9111 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M711.7947 1052.9647 L784.5717 1052.9647" clip-path="url(#clipPath2)"/>
-      <path d="M792.5717 1052.9647 L780.5717 1047.9647 L783.5717 1052.9647 L780.5717 1057.9647 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" d="M792.644 1058.9219 L719.7672 1058.9219" clip-path="url(#clipPath2)"/>
+      <path d="M711.7672 1058.9219 L723.7672 1063.9219 L720.7672 1058.9219 L723.7672 1053.9219 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" d="M711.8151 1033.4335 L784.5807 1033.4335" clip-path="url(#clipPath2)"/>
+      <path d="M792.5807 1033.4335 L780.5807 1028.4335 L783.5807 1033.4335 L780.5807 1038.4335 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M2277.4866 771.9523 L2251.9822 784.4802 L2230.4338 793.7802" clip-path="url(#clipPath2)"/>
       <path d="M2223.0886 796.9501 L2236.0876 796.7858 L2231.3518 793.3839 L2232.125 787.6044 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M1509.8938 737.9303 L2120.1199 808.8192" clip-path="url(#clipPath2)"/>
