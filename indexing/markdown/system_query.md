@@ -32,6 +32,6 @@ __Annotations__
 4. Local Indexers allocates/deallocates storage for new DDL request.
 5. Index Manager replicates the updated metadata.
 6. Metadata is persisted at both master and replica Index Manager.
-7. Index Manager notifies all KV projectors for the new DDL request.
+7. Index Manager notifies __ALL__ KV projectors for the new DDL request.
 8. Index Manager returns status of DDL request to Index Client.
 9. DDL Request Status is returned to Query Server.
