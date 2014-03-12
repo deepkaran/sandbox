@@ -2,8 +2,6 @@
 
 This document describes the flow of execution of a query engine request.
 
-####Create/Drop DDL Request
-
 ####Scan Request 
 
 ![](https://rawgithub.com/couchbase/indexing/master/secondary/docs/design/images/ScanWorkflow.svg)
