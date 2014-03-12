@@ -16,7 +16,7 @@
         <stop stop-opacity="1" stop-color="rgb(232,238,247)" offset="0%"/>
         <stop stop-opacity="1" stop-color="rgb(183,201,227)" offset="100%"/>
       </linearGradient>
-      <linearGradient x1="330" gradientUnits="userSpaceOnUse" x2="410" y1="105.75" y2="145.75" id="linearGradient4" spreadMethod="reflect">
+      <linearGradient x1="322.5" gradientUnits="userSpaceOnUse" x2="415" y1="102" y2="152" id="linearGradient4" spreadMethod="reflect">
         <stop stop-opacity="1" stop-color="rgb(232,238,247)" offset="0%"/>
         <stop stop-opacity="1" stop-color="rgb(183,201,227)" offset="100%"/>
       </linearGradient>
@@ -67,11 +67,13 @@
       <path fill="none" d="M365 175.75 L374 175.75 L374 979.1667 L365 979.1667 Z" clip-path="url(#clipPath2)"/>
     </g>
     <g fill="url(#linearGradient4)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-113,-87)" stroke="url(#linearGradient4)">
-      <path d="M330 105.75 L410 105.75 L410 145.75 L330 145.75 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path d="M322.5 102 L415 102 L415 152 L322.5 152 Z" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-113,-87)" stroke-linecap="butt">
-      <path fill="none" d="M330 105.75 L410 105.75 L410 145.75 L330 145.75 Z" clip-path="url(#clipPath2)"/>
-      <text x="344.1572" xml:space="preserve" y="130.2852" font-family="sans-serif" clip-path="url(#clipPath2)" stroke="none">Indexer1</text>
+      <path fill="none" d="M322.5 102 L415 102 L415 152 L322.5 152 Z" clip-path="url(#clipPath2)"/>
+      <text x="342.9072" xml:space="preserve" y="117.4023" font-family="sans-serif" clip-path="url(#clipPath2)" stroke="none">Indexer1</text>
+      <text x="353.457" xml:space="preserve" y="131.5352" font-family="sans-serif" clip-path="url(#clipPath2)" stroke="none">(Scan</text>
+      <text x="331.8887" xml:space="preserve" y="145.668" font-family="sans-serif" clip-path="url(#clipPath2)" stroke="none">Coordinator)</text>
     </g>
     <g fill="url(#linearGradient5)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-113,-87)" stroke="url(#linearGradient5)">
       <path d="M574 182 L583 182 L583 972.1667 L574 972.1667 Z" clip-path="url(#clipPath2)" stroke="none"/>
@@ -123,14 +125,23 @@
       <text x="380.8734" xml:space="preserve" y="591.6024" clip-path="url(#clipPath2)" stroke="none">9. Decide Scan Timestamp </text>
       <text x="380.8734" xml:space="preserve" y="605.7352" clip-path="url(#clipPath2)" stroke="none">based on Consistency/</text>
       <text x="380.8734" xml:space="preserve" y="619.868" clip-path="url(#clipPath2)" stroke="none">Stability Options</text>
-      <text x="591.0536" xml:space="preserve" y="703.5187" clip-path="url(#clipPath2)" stroke="none">11. Run Local Index </text>
-      <text x="591.0536" xml:space="preserve" y="717.6516" clip-path="url(#clipPath2)" stroke="none">Scan</text>
-      <text x="590.2411" xml:space="preserve" y="763.8851" clip-path="url(#clipPath2)" stroke="none">12. Return Results</text>
-      <text x="380.2264" xml:space="preserve" y="865.2352" clip-path="url(#clipPath2)" stroke="none">13. Aggregate Results</text>
-      <text x="381.441" xml:space="preserve" y="910.8688" clip-path="url(#clipPath2)" stroke="none">14. Return consolidated </text>
+      <text x="589.2665" xml:space="preserve" y="703.5187" clip-path="url(#clipPath2)" stroke="none">11. Find slices to run</text>
+      <text x="589.2665" xml:space="preserve" y="717.6516" clip-path="url(#clipPath2)" stroke="none">Scan</text>
+      <text x="591.4911" xml:space="preserve" y="805.1351" clip-path="url(#clipPath2)" stroke="none">13. Return Results</text>
+      <text x="380.2264" xml:space="preserve" y="865.2352" clip-path="url(#clipPath2)" stroke="none">14. Aggregate Results</text>
+      <text x="381.441" xml:space="preserve" y="910.8688" clip-path="url(#clipPath2)" stroke="none">15. Return consolidated </text>
       <text x="381.441" xml:space="preserve" y="925.0016" clip-path="url(#clipPath2)" stroke="none">Results</text>
+      <text x="589.1855" xml:space="preserve" y="755.5687" clip-path="url(#clipPath2)" stroke="none">12. Run Local Index </text>
+      <text x="589.1855" xml:space="preserve" y="769.7015" clip-path="url(#clipPath2)" stroke="none">Scan</text>
+      <text x="382.5302" xml:space="preserve" y="703.0687" clip-path="url(#clipPath2)" stroke="none">11. Find slices to run</text>
+      <text x="382.5302" xml:space="preserve" y="717.2015" clip-path="url(#clipPath2)" stroke="none">Scan</text>
+      <text x="384.7547" xml:space="preserve" y="804.6852" clip-path="url(#clipPath2)" stroke="none">13. Return Results</text>
+      <text x="382.449" xml:space="preserve" y="755.1188" clip-path="url(#clipPath2)" stroke="none">12. Run Local Index </text>
+      <text x="382.449" xml:space="preserve" y="769.2516" clip-path="url(#clipPath2)" stroke="none">Scan</text>
       <path fill="none" d="M172.0234 348.3124 L356.965 345.7719" clip-path="url(#clipPath2)"/>
       <path d="M364.9642 345.662 L352.8966 340.8273 L355.9651 345.7856 L353.034 350.8264 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" d="M360.5 700.75 L330.6954 714.7047 L319.0465 721.5374 L309.5666 728.2735 L302.2556 734.9131 L297.1136 741.4562 L294.1406 747.9028 L293.3365 754.2529 L294.7013 760.5066 L298.2351 766.6637 L303.9379 772.7243 L311.8096 778.6884 L321.8503 784.556 L334.0599 790.3271 L357.4683 798.8445" clip-path="url(#clipPath2)"/>
+      <path d="M364.9861 801.5799 L355.419 792.7781 L356.5285 798.5026 L351.9997 802.1754 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M374.0125 673.0173 L474.01 673.0173 L566.0135 673.4944" clip-path="url(#clipPath2)"/>
       <path d="M574.0134 673.5358 L562.0395 668.4738 L565.0135 673.4892 L561.9877 678.4736 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M583.0099 821.4279 L474 821.4279 L382.0012 821.6415" clip-path="url(#clipPath2)"/>
@@ -143,8 +154,6 @@
       <path d="M373.9779 468.9369 L385.9779 473.9369 L382.9779 468.9369 L385.9779 463.9369 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M779.4813 569.7564 L382.02 569.7564" clip-path="url(#clipPath2)"/>
       <path d="M374.02 569.7564 L386.02 574.7564 L383.02 569.7564 L386.02 564.7564 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M409 692 L433.7543 704.033 L443.5193 710.1263 L451.543 716.2708 L457.8254 722.4666 L462.3663 728.7135 L465.1659 735.0117 L466.2241 741.3611 L465.5409 747.7617 L463.1163 754.2135 L458.9504 760.7166 L453.043 767.2708 L445.3943 773.8763 L436.0043 780.533 L418.977 790.0857" clip-path="url(#clipPath2)"/>
-      <path d="M412 794 L424.9119 792.4891 L419.8491 789.5964 L420.019 783.7679 Z" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
   </g>
 </svg>
