@@ -6,7 +6,7 @@ This document describes the flow of execution of a query engine request.
 
 ####Scan Request 
 
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/ScanWorkflow.svg)
+![](https://rawgithub.com/couchbase/indexing/master/secondary/docs/design/images/ScanWorkflow.svg)
 
 **Description**
 

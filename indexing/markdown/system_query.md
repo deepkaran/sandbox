@@ -2,9 +2,7 @@
 
 ###Index-Query System Diagram For Scan Request
 
-
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagramScan.svg)
-
+![](https://rawgithub.com/couchbase/indexing/master/secondary/docs/design/images/SystemDiagramScan.svg)
 
 __Annotations__
 
@@ -19,8 +17,7 @@ __Annotations__
 ###Index-Query System Diagram For DDL Request
 
 
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/SystemDiagramDDL.svg)
-
+![](https://rawgithub.com/couchbase/indexing/master/secondary/docs/design/images/SystemDiagramDDL.svg)
 
 __Annotations__
 
