@@ -26,11 +26,16 @@ This document describes the flow of execution of a query engine request.
 4. Scan Request is sent to the Indexer identified in Step 2 along with the consistency/stability options.
 5. The Indexer receiving the Scan request will become the scan co-ordinator. It requests the local Index Manager for latest index topology information for the index to be scanned.
 6. Index Manager responds with the index topology information for the requested index.
-7. Indexer request latest Stability Timestamp from the Index Manager.
+  - If index is not found, scan coordinator can return an error "INDEX_NOT_FOUND"
+  - If index exists but is in rollback mode, scan coordinator can return an error "INDEX_IN_ROLLBACK"
+7. Scan coordinator requests latest Stability Timestamp from the Index Manager(except for No Stability option).
 8. Index Manager responds with the latest Stability Timestamp.
-9. Based on consistency/stability options for the scan, Indexer would either poll all KV nodes for the latest timestamp(Session Consistency) and mark that as the Scan Timestamp or choose Stability Timestamp for the Scan (Scan Stability) or a nil scan timestamp for scanning the tip.
-10. Indexer will send all participating indexers(identified in Step 5) the Scan request with Scan Timestamp.
-11. Local indexers will run the scan on the tip or a snapshot based on the decision made in Step 9.
-12. Scan results are returned to Scan co-ordinator.
-13. Results are consolidated/aggregated as required. 
-14. Results are returned to index client. Local indexer may start streaming the results to index client before all scans are finished for efficiency.
+9. Based on consistency/stability options for the scan, Scan coordinator would either poll all KV nodes for the latest timestamp(Session Consistency) and mark that as the Scan Timestamp or choose Stability Timestamp for the Scan (Scan/Query Stability) or a nil scan timestamp for scanning the tip(Any Consistency/No Stability).
+10. Scan coordinator will send all participating indexers(identified in Step 5) the Scan request with Scan Timestamp.
+11. Each local indexer node would use its topology metadata for finding the slices that are required for this scan.
+  - If the slices is not active or cannot be found, the local indexer should return an error to the scan coordinator.
+12. Local indexer will wait for its local stability timestamp to get past Scan Timestamp(Session Consistency) or run scan against the snapshot matching Scan Timestamp(Scan/Query Stability) or run the scan on the tip(Any Consistency/No Stability).
+  - If snapshot is deleted, then the indexer can return an error “SNAPSHOT_TOO_OLD”
+13. Scan results are returned to Scan co-ordinator.
+14. Results are consolidated/aggregated as required. 
+15. Results are returned to index client. Local indexer may start streaming the results to index client before all scans are finished for efficiency.
