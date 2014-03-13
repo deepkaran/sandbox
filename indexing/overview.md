@@ -10,19 +10,19 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 - __Projector__
 
-  The projector is responsible for mapping mutations to a set of key version. The projector can reside within the master KV node in which the mutation is generated or it can reside in separate node. The projector receives mutations from ep-engine through UPR protocol. The projector sends the evaluated results to router. [Details.](https://github.com/deepkaran/sandbox/blob/master/indexing/markdown/projector.md)
+  The projector is responsible for mapping mutations to a set of key version. The projector can reside within the master KV node in which the mutation is generated or it can reside in separate node. The projector receives mutations from ep-engine through UPR protocol. The projector sends the evaluated results to router.
 
 - __Router__
 
-  The router is responsible for sending key version to the index nodes. It relies on the index distribution/partitioning topology to determine the indexer which should receive the key version. The router resides in the same node as the projector. [Details.](https://github.com/deepkaran/sandbox/blob/master/indexing/markdown/router.md)
+  The router is responsible for sending key version to the index nodes. It relies on the index distribution/partitioning topology to determine the indexer which should receive the key version. The router resides in the same node as the projector.
   
 - __Index Manager__
 
-  The index manager is responsible for receiving requests for indexing operations (creation, deletion, maintenance, scan/lookup). The Index Manager is located in the index node, which can be different from KV node. [Details.](https://github.com/deepkaran/sandbox/blob/master/indexing/markdown/index_manager.md)
+  The index manager is responsible for receiving requests for indexing operations (creation, deletion, maintenance, scan/lookup). The Index Manager is located in the index node, which can be different from KV node.
   
 - __Indexer__
 
-  The indexer provides persistence support for the index. The indexer would reside in index node.     [Details.](https://github.com/deepkaran/sandbox/blob/master/indexing/markdown/indexer.md)
+  The indexer provides persistence support for the index. The indexer would reside in index node.
   
 - __Query Catalog__
 
@@ -76,7 +76,7 @@ This document describes the High Level Design for Secondary Indexes. It also des
 * Metadata Recovery
 
 ###Recovery
-* [Recovery Document](https://docs.google.com/document/d/1rNJSVs80TtvY0gpoebsBwzhqWRBJnieSuLTnxuDzUTQ/edit) 
+* [John's Recovery Document](https://docs.google.com/document/d/1rNJSVs80TtvY0gpoebsBwzhqWRBJnieSuLTnxuDzUTQ/edit) 
 
 ###Replication
 * Replication Strategy
@@ -89,3 +89,9 @@ This document describes the High Level Design for Secondary Indexes. It also des
 ###Terminology
 
 * [Terminology Document](markdown/terminology.md)
+
+###References
+1. [Distributed Indexing Design Proposal - Steve Yen](https://docs.google.com/document/d/1TEY_yjUMs3FT3FZkgqIZUiKziUUBGiCWFSjWOOj65Dw/edit?pli=1)
+2. [Consistency In Indexes - John Liang](https://docs.google.com/document/d/1VespzgCKgPLFwCGRrx0VW7RC_PkSXh6cU7FSaA9gjic/edit?pli=1)
+3. [Index Consistency And Isolation - Steve Yen](https://docs.google.com/document/d/1Y_aXMUBzEvLf8PO8CJYv5eYiQmKsNYzMr6Fq30Cl6xg/edit?pli=1)
+4. [Recovery In Secondary Indexes - John Liang](https://docs.google.com/document/d/1rNJSVs80TtvY0gpoebsBwzhqWRBJnieSuLTnxuDzUTQ/edit) 
