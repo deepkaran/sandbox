@@ -1,19 +1,58 @@
-Goals and Motivation (Can get PM help)
-Independent Scaling – Ease of scaling by allocating dedicated resources for different kinds of workload (e.g. KV versus indexing)
-Enable predictable index range scan latency (e.g. Independent of KV cluster size)
-Improve latency and throughput on existing solution (do a comparative study with Views — with Sarath help)
-Support N1QL use case
-Query Stability 
-Consistency Requirement
-Performance Goals
-Design Principle
-Timestamp based for consistency/stability
-Event Streaming and Routing – E.g. An index replica can also be a source of event generation (not just projector)
-Network Protocol Independent
-Active Replica
-Partitioning Scheme Independent 
-Storage Layer Independent 
-Challenges
-Network Bandwidth 
-Memory
-Storage Performance
+##Couchbase Secondary Indexes
+
+Couchbase Secondary Indexes are being designed to provide an alternative to the existing "Views based" secondary indexes available. This project is being built from ground up to improve existing solution and support new use-cases e.g. N1QL.
+
+###Goals and Motivation
+- Independent Scaling – Ease of scaling by allocating dedicated resources for different kinds of workload (e.g. KV versus indexing)
+- Enable predictable index range scan latency (e.g. Independent of KV cluster size)
+- Improve latency and throughput on existing solution
+- Support N1QL use case
+  - Query Stability 
+  - Consistency Requirement
+
+###Design Principle
+- Timestamp based consistency/stability
+- Event Streaming and Routing – E.g. An index replica can also be a source of event generation (not just projector)
+- Network Protocol Independent
+- Active Replica (Allow query on active replica to enable higher throughput)
+- Partitioning Scheme Independent 
+- Storage Layer Independent 
+
+###Challenges
+- Network Bandwidth 
+- Memory
+- Storage Performance
+
+###Performance Goals
+
+- Compaction Goals
+- Throughput Goals
+- Latency Goals
+
+###Version1 Goals
+
+####Features
+
+#####Indexing
+- Key Based Partitioning Support
+- Cluster Manager using ns_server(master election)
+- ForestDB Integration as backend for persistence/query
+  - Support for Crash Recovery and Compaction
+- Distributed Index Metadata Management
+- Error Management (Recovery for all Indexing component failures)
+- Administration UI (Management And Statistics)
+- Network Protocol Independent
+- Flexible Deployment Options
+
+#####KV
+- Independent Scaling from KV Cluster 
+- Mutation Stream via UPR
+- Support KV Failover(data loss), Rebalance
+
+#####Query
+- Consistency/Stability Options
+- Active Replica for Query
+
+####Limitations
+
+
