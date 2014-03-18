@@ -18,17 +18,6 @@ Couchbase Secondary Indexes are being designed to provide an alternative to the 
 - Partitioning Scheme Independent 
 - Storage Layer Independent 
 
-###Challenges
-- Network Bandwidth 
-- Memory
-- Storage Performance
-
-###Performance Goals
-
-- Compaction Goals
-- Throughput Goals
-- Latency Goals
-
 ###Version1 Features
 
 #####Indexing
