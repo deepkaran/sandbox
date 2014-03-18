@@ -29,30 +29,29 @@ Couchbase Secondary Indexes are being designed to provide an alternative to the 
 - Throughput Goals
 - Latency Goals
 
-###Version1 Goals
-
-####Features
+###Version1 Features
 
 #####Indexing
 - Key Based Partitioning Support
 - Cluster Manager using ns_server(master election)
 - ForestDB Integration as backend for persistence/query
   - Support for Crash Recovery and Compaction
+- Index Node Failover and Rebalance
 - Distributed Index Metadata Management
 - Error Management (Recovery for all Indexing component failures)
 - Administration UI (Management And Statistics)
 - Network Protocol Independent
 - Flexible Deployment Options
 
-#####KV
+#####KV Related
 - Independent Scaling from KV Cluster 
 - Mutation Stream via UPR
 - Support KV Failover(data loss), Rebalance
 
-#####Query
+#####Query Related
 - Consistency/Stability Options
 - Active Replica for Query
 
-####Limitations
+#####Limitations
 
 
