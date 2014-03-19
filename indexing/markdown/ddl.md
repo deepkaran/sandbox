@@ -10,7 +10,7 @@ This will allow same UPR connection to be shared for multiple indexes' initial b
 
 ####Prepare Phase
 
-![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/InitialBuild_Load.svg)
+![](https://rawgithub.com/deepkaran/sandbox/master/indexing/images/InitialBuild_Prepare.svg)
 
 #####Description
 
