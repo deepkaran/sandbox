@@ -1,6 +1,14 @@
+##Recovery Cases
 
-| Tables        | Are           | Cool  |
+| Failure       | Phase         | Action  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| UPR Connection Loss      | Regular |  |
+| Projector Restart      | Regular      |    |
+| Router Restart | Regular      |     |
+| 
+
+Open Questions
+
+- Do we keep a connection open from IC to projector?
+- If we piggyback SYNC messages, then who sends it to projector
+- Does IC contact all projectors for the log in case of one projector dropping UPR connection
