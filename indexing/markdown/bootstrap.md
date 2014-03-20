@@ -29,7 +29,7 @@ or contacts Index Coordinator to get the latest StateContext and takes further a
 11. ns_server brings up Indexer process on all Indexer Nodes providing master endpoint as input.
 12. Indexer process will handshake with Index Coordinator master and get the StateContext (which has index topology and list of projectors). 
 13. Index Coordinator will provide StateContext to Indexers.
-14. Once all Indexers have done the handshake, Index Coordinator will send request to all Projectors to initiate `Topic Creation` for `IncrementalStream` topic sending StateContext to Projector.
+14. Once all Indexers have done the handshake, Index Coordinator will send request to all Projectors to initiate `Topic Creation` for `MaintenanceStream` topic sending StateContext to Projector.
 15. One or more Indexers may choose to create `CatchupStream` topic with projector based on if its in recovery.
 
 
@@ -61,7 +61,7 @@ or contacts Index Coordinator to get the latest StateContext and takes further a
  - If one indexer process crashes and its being brought up again by ns_server, same procedure is followed i.e. its provided with master endpoint to handshake.
 12. Indexer process will handshake with Index Coordinator master and get the StateContext (which has index topology and list of projectors). 
 13. Index Coordinator will provide StateContext to Indexers.
-14. Once all Indexers have done the handshake, Index Coordinator will send request to all Projectors to initiate `Topic Creation` for `IncrementalStream` topic sending StateContext to Projector.
- - In case of a single indexer restart, Index Coordinator master makes this request to all Projectors so they can re-add this subscriber to `IncrementalStream` topic.
+14. Once all Indexers have done the handshake, Index Coordinator will send request to all Projectors to initiate `Topic Creation` for `MaintenanceStream` topic sending StateContext to Projector.
+ - In case of a single indexer restart, Index Coordinator master makes this request to all Projectors so they can re-add this subscriber to `MaintenanceStream` topic.
 13. One or more Indexers may choose to create `CatchupStream` based on if its in recovery.
 
