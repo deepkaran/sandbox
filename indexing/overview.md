@@ -42,11 +42,7 @@ This document describes the High Level Design for Secondary Indexes. It also des
 
 ###Bootstrap Sequence
 
-* System Bootstrap
-* Indexer Restart Bootstrap
-* Projector Restart Bootstrap
-* Router Restart Bootstrap
-* Index Manager Restart Bootstrap
+* [System Bootstrap](markdown/bootstrap.md)
 
 ###Deployment
 
