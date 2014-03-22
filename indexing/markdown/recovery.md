@@ -1,11 +1,46 @@
 ##Recovery Cases
 
-| Failure       | Phase         | Action  |
-| ------------- |:-------------:| -----:|
-| UPR Connection Loss      | Regular |  |
-| Projector Restart      | Regular      |    |
-| Router Restart | Regular      |     |
-| 
+
+##Individual Component Restart
+
+This document describes steps for individual component restart during various states the Indexing System may be in.
+
+####Index Coordinator(Master)
+
+
+####Index Coordinator(Replica)
+
+####Projector/Router
+
+Projector and Router are stateless components and run in a single process on KV.
+These components don't have a local persisted state. 
+
+**Process Crash**
+
+**Node Restart**
+
+
+####Indexer (Local Indexer)
+
+
+
+
+
+
+
+| Failure       | Mode         | Topic  | Action  |
+| ------------- |:-------------:| -----:| -----:|
+| UPR Connection Loss      | Regular | Maintenance |  |
+| UPR Connection Loss      | Regular | Catchup |  |
+| UPR Connection Loss      | Regular | Backfill |  |
+| UPR Connection Loss      | Rollback | Maintenance |  |
+| UPR Connection Loss      | Rollback | Catchup |  |
+| UPR Connection Loss      | Rollback | Backfill |  |
+| Projector Restart      | Regular      | Maintenance |  |
+| Projector Restart      | Regular      | Catchup |  |
+| Projector Restart      | Regular      | Backfill |  |
+
+
 
 Open Questions
 
