@@ -1,9 +1,7 @@
 ##Design Writeup Tasks
 
-- Metadata Management(write briefly about sync replication and then point to Initial build prepare phase)
 - Initial Build Writeup(Add Catchup Queue Stuff)
-- Gerrit Reviews update
-- Review this doc and add recovery questions
+- Add Readme file for review
 - Review all writeups
 - Indexer writeup
  - Include a separate port for indexer
@@ -28,6 +26,8 @@ e.g. restart of memcached
 
 - Do we create separate endpoints for each mutation queue/catchup queue?
 
+- What if after initial build is complete, backfill queue is being used and user wants to start another round of build procedure? Is it better to call index is ready only when it has caught up completely?
+ 
 ####Recovery
 
 - Think about recovery with multiple indexes being at different points
@@ -61,15 +61,28 @@ How is this possible, we have a already done this is Step 2,3
 ####Recovery
 - What if IC dies before all indexers have persisted and one of the indexer also dies?
 
-- Why is Restart Timestamp -> stability snapshot
-
 - What if all indexers couldn't listen to stability ts message before IC died
 
 - What happens during the duration there is no master
 
-
 - In case of rollback/restart, catchup has to be discarded as we supplied the lowest timestamp
 so everybody would have rolled-back to same state, and no catch-up is required.
+
+- Why we clean up all queues if in rollback mode, 
+queues may be full as indexers are slow, but this data can be useful
+
+- Step 7
+If the failover timestamp is lower than the UPR restart timestamp, 
+then the local indexer will find a snapshot that is higher than or equal to the UPR restart timestamp.
+
+How is the above possible.
+
+- Step8
+How can we assume that backfill mutations would never need to be rolled back
+
+####Index Coordinator restart
+
+- When replica takes over, it needs to check if it is rollback mode
 
 ####General
 
