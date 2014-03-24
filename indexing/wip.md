@@ -1,10 +1,13 @@
 ##Design Writeup Tasks
 
+- Metadata Management(write briefly about sync replication and then point to Initial build prepare phase)
+- Initial Build Writeup(Add Catchup Queue Stuff)
+- Gerrit Reviews update
+- Review this doc and add recovery questions
+- Review all writeups
 - Indexer writeup
  - Include a separate port for indexer
 - Writeup for Drop Index
-- Metadata Management(write briefly about sync replication and then point to Initial build prepare phase)
-- Initial Build Writeup(Add Catchup Queue Stuff)
 
 
 ##Other Tasks
@@ -23,6 +26,7 @@ e.g. restart of memcached
 
 - how does index client get notifications about topology changes, new ddl requests from other clients
 
+- Do we create separate endpoints for each mutation queue/catchup queue?
 
 ####Recovery
 
@@ -31,6 +35,14 @@ e.g. restart of memcached
 ##Convergance
 
 ####Stability Timestamp Promotion
+
+- If coordinator does not poll, how will indexer know where its peers are? How does it choose Scan Timestamp? Will it talk to other indexers at scan time or will it be told about other indexers status e.g. replica may have caught up and indexer would like to know that
+- If it polls, maybe still it can keep generating ST in future and doesn't wait 
+- May be its a question of allowing more control per index, if we leave this decision to indexer at scan time. coordinator doing it would make it per bucket sort of.
+
+####Initial Build
+
+- Multiple Catch queue - Is indexer allowed to have multiple catchup queues for maintenance/catchup?
 
 ####Execution Flow
 
@@ -61,7 +73,7 @@ so everybody would have rolled-back to same state, and no catch-up is required.
 
 ####General
 
-- Mechanism of catchup in case of multiple indexes(from multiple buckets) in the same indexer node
+- Mechanism of catchup in case of multiple indexes(from multiple buckets) or for initial load in the same indexer node, specifically how indexer will differentiate which message is for which topic?
 
 - Local Indexer will persist mutations from catchup queue based on Stability Timestamp history. 
 It will also create snapshots based on Stability Timestamp history. 
