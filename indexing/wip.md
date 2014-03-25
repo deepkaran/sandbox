@@ -1,12 +1,16 @@
 ##Design Writeup Tasks
 
+- Review Pratap's Docs
+- Partition/Slice mapping
+- Send mail for differences in recovery doc
+- Add to bootstrap that indexer will verify its local copy
 - Initial Build Writeup(Add Catchup Queue Stuff)
 - Add Readme file for review
-- Review all writeups
 - Indexer writeup
  - Include a separate port for indexer
 - Writeup for Drop Index
-
+- Review JIRA Tasks
+- Review all writeups
 
 ##Other Tasks
 
@@ -19,18 +23,9 @@
 
 - Is our UPR assumption correct that there is no data loss if there is no failover log entry
 e.g. restart of memcached
-
-- How do we query from replica if index coordinator is not going to participate
-
 - how does index client get notifications about topology changes, new ddl requests from other clients
+- Does projector talk to IC to register itself?
 
-- Do we create separate endpoints for each mutation queue/catchup queue?
-
-- What if after initial build is complete, backfill queue is being used and user wants to start another round of build procedure? Is it better to call index is ready only when it has caught up completely?
- 
-####Recovery
-
-- Think about recovery with multiple indexes being at different points
 
 ##Convergance
 
@@ -39,10 +34,15 @@ e.g. restart of memcached
 - If coordinator does not poll, how will indexer know where its peers are? How does it choose Scan Timestamp? Will it talk to other indexers at scan time or will it be told about other indexers status e.g. replica may have caught up and indexer would like to know that
 - If it polls, maybe still it can keep generating ST in future and doesn't wait 
 - May be its a question of allowing more control per index, if we leave this decision to indexer at scan time. coordinator doing it would make it per bucket sort of.
+- How do we query from replica if index coordinator is not going to participate
+
 
 ####Initial Build
 
-- Multiple Catch queue - Is indexer allowed to have multiple catchup queues for maintenance/catchup?
+- Multiple Catch queue - Is indexer allowed to have multiple catchup queues for maintenance/backfill?
+How does indexer differentiate between messages for same catchup queue, is it based on different endpoint?
+- Do we create separate endpoints for each mutation queue/catchup queue?
+- What if after initial build is complete, backfill queue is being used and user wants to start another round of build procedure? Is it better to call index is ready only when it has caught up completely?
 
 ####Execution Flow
 
@@ -59,11 +59,6 @@ How is this possible, we have a already done this is Step 2,3
 
 
 ####Recovery
-- What if IC dies before all indexers have persisted and one of the indexer also dies?
-
-- What if all indexers couldn't listen to stability ts message before IC died
-
-- What happens during the duration there is no master
 
 - In case of rollback/restart, catchup has to be discarded as we supplied the lowest timestamp
 so everybody would have rolled-back to same state, and no catch-up is required.
@@ -80,22 +75,19 @@ How is the above possible.
 - Step8
 How can we assume that backfill mutations would never need to be rolled back
 
+- When does maintenance stream start in case of KV rollback
+
+
 ####Index Coordinator restart
 
 - When replica takes over, it needs to check if it is rollback mode
+- What if all indexers couldn't listen to stability ts message before IC died
+- What happens during the duration there is no master
 
 ####General
 
-- Mechanism of catchup in case of multiple indexes(from multiple buckets) or for initial load in the same indexer node, specifically how indexer will differentiate which message is for which topic?
-
 - Local Indexer will persist mutations from catchup queue based on Stability Timestamp history. 
 It will also create snapshots based on Stability Timestamp history. 
-
-- Projector failure when catchup is happening
-
-- Why is snapshot creation responsibility of the local indexer i.e. the choice of when to create
-
-- How does new master check everything is running fine
 
 
 ##Box
