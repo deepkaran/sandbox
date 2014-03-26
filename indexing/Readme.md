@@ -1,36 +1,31 @@
 ##Couchbase Secondary Indexes
 
-Couchbase Secondary Indexes are being designed to provide an alternative to the existing "Views based" secondary indexes available. This project is being built from ground up to improve existing solution and support new use-cases e.g. N1QL.
+Secondary Index Project aims to provide an alternative to the existing map-reduce based 
+*Hash Partitioned Secondary Indexes*(known as Views) available in Couchbase. 
+This project is being built from ground up to improve the existing solution and
+support new use-cases e.g. N1QL.
 
 ###Goals and Motivation
-- Independent Scaling – Ease of scaling by allocating dedicated resources for different kinds of workload (e.g. KV versus indexing)
-- Enable predictable index range scan latency (e.g. Independent of KV cluster size)
-- Improve latency and throughput on existing solution
-- Support N1QL use case
-  - Query Stability 
-  - Consistency Requirement
 
-###Design Principle
-- Timestamp based consistency/stability
-- Event Streaming and Routing – E.g. An index replica can also be a source of event generation (not just projector)
-- Network Protocol Independent
-- Active Replica (Allow query on active replica to enable higher throughput)
-- Partitioning Scheme Independent 
-- Storage Layer Independent 
+- **Performance** – Support index clustering to avoid scatter/gather and index working set management
+- **Independent Scaling** – Enable secondary index to scale independent of Key-value workload
+- **Partitioning Scheme Flexibility** – Can support for different partitioning schemes for index data (hash, range, key)
+- **Indexing Structure Flexibility** – Can support for different indexing structure (b-tree/trie, hash, R+ tree)
+- **Scan Consistency** – Using timestamp to ensure query stability and consistency
+
 
 ###Version1 Features
 
 #####Indexing
 - Key Based Partitioning Support
-- Cluster Manager using ns_server(master election)
-- ForestDB Integration as backend for persistence/query
-  - Support for Crash Recovery and Compaction
-- Index Node Failover and Rebalance
+- Replicated Index Data to support Index Node Failure
+- Horizontal Scalability(Rebalance) 
+- Cluster Management using ns_server(master election)
 - Distributed Index Metadata Management
+- ForestDB Integration as backend for Persistence/Query
+  - Support for Crash Recovery and Compaction
 - Error Management (Recovery for all Indexing component failures)
 - Administration UI (Management And Statistics)
-- Network Protocol Independent
-- Flexible Deployment Options
 
 #####KV Related
 - Independent Scaling from KV Cluster 
@@ -40,7 +35,5 @@ Couchbase Secondary Indexes are being designed to provide an alternative to the 
 #####Query Related
 - Consistency/Stability Options
 - Active Replica for Query
-
-#####Limitations
 
 
