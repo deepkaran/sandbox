@@ -1,10 +1,22 @@
 ##Design Writeup Tasks
 
+####Today
+
+- update query.md to use coordinator terminology(arrow in step13 is missing)
+- link overview.md to README
+- Workout topic stuff
+- Initial Build Writeup(Add Catchup Queue Stuff, Also mention new mutations will be queued up in mutation queue)
+ - Step 10,  indexing building -> initial load or backfill
+ - status INITIAL_BUILD should be marked by coordinator?
+ - make build complete a proper message
+
+####Later
 - Add review comment for invariant
 - Read snapshot document again
-
+- Catchup Queue working needs a flow diagram
+- Recovery needs a flow diagram
 - Understand KV Rebalance handling in index
-- Initial Build Writeup(Add Catchup Queue Stuff, Also mention new mutations will be queued up in mutation queue)
+- Index Coordinator restart
 - Review JIRA Tasks
 
 ##Pending Tasks
@@ -12,6 +24,8 @@
  - Include a separate port for indexer
 - Writeup for Drop Index
 - Recovery Flow diagram
+
+##Edits
 
 ##Other Tasks
 
@@ -42,7 +56,9 @@ e.g. restart of memcached
 How does indexer differentiate between messages for same catchup queue, is it based on different endpoint?
 - Do we create separate endpoints for each mutation queue/catchup queue?
 - What if after initial build is complete, backfill queue is being used and user wants to start another round of build procedure? Is it better to call index is ready only when it has caught up completely?
-- Discussion on catchup queue and mutation queue regarding stability timestamp history, when do we say recovery is complete and we start query?
+- When do we start persisting as per stability timestamps?
+ - When init build is in progress, indexer keeps storing history and then apply after build is complete
+ - Or after build is complete, then it stores and apply 
 
 ####Recovery
 
@@ -62,17 +78,14 @@ How is the above possible.
 
 - Local Indexer will persist mutations from catchup queue based on Stability Timestamp history. 
 It will also create snapshots based on Stability Timestamp history. 
-
 - Who verifies the topology once indexer comes up, index coordinator or indexer?
-- While initial build is in progress, will the mutation queue keep storing the mutations so these can be applied later on to the indexes or will it just ignore it?
 - Why does router drop the slow subscriber? It still has to get the mutations even if it establishes a catchup. I assume that main connection also get re-activated once catch-up has been requested.
 - No component restarts itself, only ns_server can bring up components. So effectively bootstrap and restart are the same.
-
 
 **Important**
 - Backfill queue won't require rollback if new mutations are put in mutation queue only
 - Backfill queue will be done after reaching initial build timestamp
-- Recovery: Catchup queue will be done once we have reached the point where recovery started and things are in mutation queue.
+- Recovery: Catchup queue will be done once we have reached the point where recovery started and things are in mutation queue. (Do we apply stability timestamp to catchup queue?)
 
 
 ##Box
