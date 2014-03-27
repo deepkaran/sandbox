@@ -5,7 +5,7 @@
 **Request New Topic**
 
 - **Index Coordinator/Indexer** sends request with following information:
- - List of IndexIds
+ - List of Indexes
  - `Subscriber List` which is a list of mapping between IndexerId(each indexer has a unique id) and Port(on which Indexer wants to receive the message)
  - Restart timestamp
 
