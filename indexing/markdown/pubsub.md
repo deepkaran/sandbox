@@ -1,27 +1,24 @@
-###Proposal for generic pub-sub
+###Generic pub-sub
 
-####Projector
+####Projector/Router
 
 **Request New Topic**
 
-- Request contains:
+- Index Coordinator/Indexer sends request with following information:
  - list of indexes
  - mapping between indexerid and port
+ - restart timestamp
 
-Projector generates a new topicid for this request which is for internal pub-sub use.
-TopicId is sent to router with other request payload.
+- Projector generates a new **TopicId** for this request which is for internal pub-sub use.
+- TopicId is sent to router with other request payload.
+- Router generates list of subscribers as follows: <br>
+**TopicId, IndexerId, Port**
 
-####Router
+- Router has the topology metadata: <br>
+**IndexId -> IndexInstance -> Partition/Slice -> IndexerId** 
 
-Router has the topology metadata:
-<IndexId>
--- <IndexInstance> (For replica)
----- <Partition>
------- <Slice>
--------- <IndexerId>
-
-Router generates list of subscribers as follows:
-<TopicId><IndexerId><Port>
+- Projector starts a new UPR stream with KV for the bucket(s) based on timestamp for the vbuckets
+it is responsible for. All messages for this connection will be sent on the newly generated **TopicId**.
 
 
 ####Mutation Flow on a topic
@@ -37,8 +34,3 @@ Router generates list of subscribers as follows:
 - The destination knows which port it has requested for what topic messages e.g. backfill, catchup, maintenance
 - Even if the request has been made by the coordinator, it is a fixed port for backfill, maintenance.
 But projector/router need not have that static mapping. It remains generic.
-
-####Constraints
-- Make sure projector can open multiple connection request(for multiple buckets) for the same topic
-- Works for topics which need to be sent to all Indexers vs subset of Indexers
-- Multiple destinations for a single topic
