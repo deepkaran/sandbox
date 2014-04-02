@@ -2,28 +2,21 @@
 
 ####Today
 
-- Workout topic stuff
 - Initial Build Writeup(Add Catchup Queue Stuff)
  - Step 10,  indexing building -> initial load or backfill
  - status INITIAL_BUILD should be marked by coordinator?
  - make build complete a proper message
+- Add John's answers to the docs
 
 ####Later
-- Add review comment for invariant
 - Read snapshot document again
-- Catchup Queue working needs a flow diagram
-- Recovery needs a flow diagram
 - Understand KV Rebalance handling in index
-- Index Coordinator restart
-- Review JIRA Tasks
+- Index Coordinator restart/recovery
+- fix terminology backindex,forwardindex have issues in format
+- Add backlog/issues from ppt to the github as well
 
 ##Pending Tasks
-- Indexer writeup
- - Include a separate port for indexer
 - Writeup for Drop Index
-- Recovery Flow diagram
-- KV Rebalance
-- Index Coordinator Recovery
 
 ##Edits
 
