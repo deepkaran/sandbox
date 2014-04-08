@@ -13,6 +13,7 @@ Variables:
 - vbucket
 - bucket
 - index
+- size of mutation
 
 Prototype has 8 internal worker queues for each main Queue.
 This improves the persistence rate due to parallel workers.
@@ -55,7 +56,6 @@ __Global Pool__
 - Each struct needs to have a flag which says its free (Or maybe its a array of structs which have a free flag)
 - Needs to have a free list as well, so its not required to traverse the full list to find the free slot
 - When a mutation message is read its in the protobuf struct, and then if the list has a free slot its copied. Otherwise the thread stalls to do it, thereby causing underlying library to stall reading from the network.
-- 
 
 __Mutation Queue__
 - Circular buffer (array of say 1M mutation pointers)
@@ -73,10 +73,12 @@ __Flow__
 - Router can create multiple connections to this port but it will use one for every vbucket
 - At server, all the mutations coming in are put on a single channel say ch1
 - Goroutine listening to ch1 will just pick the mutation and put them on a set of channels lets say ch1a to ch1d based on vbucket
-- Goroutine listening to ch1a to ch1d will copy the protobuf message on to mutation struct allocated by go-slab (what if slab is full, where is the flow control?)
+- Goroutine listening to ch1a to ch1d will copy the protobuf message on to mutation struct allocated by SlabManager which encapsulates go-slab (making it concurrent and also limiting the max size)
 - Then this mutation message is added on to the queue
 - Queue will internally increment its HWT and head/tail pointer for this vbucket. 
-- 
 
-*How will *
-*Optimize for open ST i.e. bypass the queue and onto the persistence directly*
+
+- *How will flow control happen*
+- *Thread Safety needs to be built*
+- *Optimize for open ST i.e. bypass the queue and onto the persistence directly*
+- *Add function for draining the queue*
