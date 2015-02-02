@@ -1,4 +1,4 @@
- ##2i Jan Code Drop Features
+##2i Jan Code Drop Features
   
 ###QE Ready
 
@@ -9,11 +9,14 @@
 - Rebalance KV Node In/Out
 - Failover KV Node(Graceful)
 - Bucket Delete
-- Projector Process Failure
-- KV Failure(Memcached Crash/Node Restart)
-- Indexer Process Failure
+- Projector Process Failure Recovery
+- KV Failure(Memcached Crash/Node Restart) Recovery
+- Indexer Process Failure Recovery
 - Deferred Index Build
 - Auto-discovery of Cluster Services
+- CbAuth Integration
+- Configurable Indexer Settings
+- Indexer Statistics
 
 ###Implemented
 
