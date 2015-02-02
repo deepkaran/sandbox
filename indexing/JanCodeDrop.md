@@ -20,8 +20,8 @@
 
 ###Implemented
 
-- Failover KV Node(Hard)
-- Bucket Flush
-- Index Compaction
+- Failover KV Node(Hard) [MB-13239](https://issues.couchbase.com/browse/MB-13239)
+- Bucket Flush [MB-13239](https://issues.couchbase.com/browse/MB-13239)
+- Index Compaction [MB-13111](https://issues.couchbase.com/browse/MB-13239)
 - In-memory Snapshots
 - Multi Buckets
