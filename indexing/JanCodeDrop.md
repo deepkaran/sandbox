@@ -1,8 +1,8 @@
 ##2i Jan Code Drop Features
   
-###QE Ready
+###Indexer
 
-####Indexer
+####QE Ready
 
 - Create/Drop/List/Scan On Single Indexer Node
 - Multi Indexer Nodes
@@ -24,3 +24,4 @@
 - Bucket Flush
 - Index Compaction
 - In-memory Snapshots
+- Multi Buckets
