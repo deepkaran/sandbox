@@ -1,11 +1,11 @@
 
 ##Secondary Index Deployment Options
 
-####Overview
+###Overview
 
 [Deployment Plan Design Doc](https://docs.google.com/document/d/1z0C7OodlagDnesvmL6OwbNcnpCrbkN8T_K4_Y6PKwgk/edit#heading=h.jyuvpp7j9swu) provides an overview of this feature.
 
-####Syntax
+###Syntax
 
 ```CREATE INDEX index_type
 ON `beer-sample`(type) 
@@ -18,15 +18,20 @@ WITH `{"nodes": ["node_addr"], "defer_build": true}````
 
 **Note** Currently due to a bug the **node_addr** needs to have the **indexAdmin** port rather than the ns_server port. This port can be discovered for an Indexer Node from the nodeServices url (e.g.  http://127.0.0.1:9000/pools/default/nodeServices and look up indexAdmin port for the current node). If the indexAdmin port is 9100, the **node_addr** would be "127.0.0.1:9100".
 
-####Examples of Deployment Plan Usage
+###Examples of Deployment Plan Usage
 
-#####Setup: 
+####Setup
  
 **Node1**(172.16.1.174:9000) - kv+index+n1ql  (**"indexAdmin":"9100"**)
 
 **Node2**(127.0.0.1:9001)    - index (**"indexAdmin":"9106"**)
 
-**Create Index On A Node With Deployment Plan**
+
+
+
+####Create Index On A Node With Deployment Plan
+
+
 
 ```CREATE INDEX index_abv 
 ON `beer-sample`(abv) 
@@ -43,7 +48,11 @@ WITH `{"nodes": ["127.0.0.1:9106"]}`;```
 Index index_type gets deployed on node 127.0.0.1:9001 and build is triggered immediately.
 
 
-**Create Index On A Node In Deferred Mode**
+
+
+####Create Index On A Node In Deferred Mode
+
+
 
 ```CREATE INDEX index_abv 
 ON `beer-sample`(abv) 
@@ -64,7 +73,12 @@ Index index_type gets deployed on a randomly choosen Indexer node and build is n
 
 Build for indexes index_abv and index_type gets triggered.
 
-**Create Index With Both Deployment and Deferred Mode Option**
+
+
+
+####Create Index With Both Deployment and Deferred Mode Option
+
+
 
 ```CREATE INDEX index_abv 
 ON `beer-sample`(abv) 
