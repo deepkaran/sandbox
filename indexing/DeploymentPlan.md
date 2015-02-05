@@ -22,9 +22,9 @@ WITH `{"nodes": ["node_addr"], "defer_build": true}`'```
 
 #####Setup: 
  
-**Node1**(172.16.1.174:9000) - kv+index+n1ql 
+**Node1**(172.16.1.174:9000) - kv+index+n1ql  **indexAdmin - 9100**
 
-**Node2**(127.0.0.1:9001)    - index 
+**Node2**(127.0.0.1:9001)    - index **indexAdmin - 9106**
 
 **Create Index On A Node With Deployment Plan**
 
@@ -33,19 +33,15 @@ ON `beer-sample`(abv)
 USING GSI 
 WITH `{"nodes": ["172.16.1.174:9100"]}`;```
 
-nodes parameter accepts the indexAdmin port on the index node which
-can be discovered under nodeServices url:
-http://172.16.1.174:9000/pools/default/nodeServices
-"indexAdmin":9100
-
+Index index_abv gets deployed on node 172.16.1.174:9000 and build is triggered immediately.
 
 ```CREATE INDEX index_type
 ON `beer-sample`(type) 
 USING GSI 
 WITH `{"nodes": ["127.0.0.1:9106"]}`;```
 
-http://localhost:9001/pools/default/nodeServices
-"indexAdmin":9106
+Index index_type gets deployed on node 127.0.0.1:9001 and build is triggered immediately.
+
 
 **Create Index On A Node In Deferred Mode**
 
@@ -54,14 +50,19 @@ ON `beer-sample`(abv)
 USING GSI 
 WITH `{"defer_build": true}`;```
 
+Index index_abv gets deployed on a randomly choosen Indexer node and build is not triggered.
+
 ```CREATE INDEX index_type
 ON `beer-sample`(type) 
 USING GSI 
 WITH `{"defer_build": true}`;```
 
+Index index_type gets deployed on a randomly choosen Indexer node and build is not triggered.
+
+
 ```BUILD INDEX ON `beer-sample`(index_abv, index_type) USING GSI;```
 
-Note - In this case index deployment is chosen randomly by Indexer.
+Build for indexes index_abv and index_type gets triggered.
 
 **Create Index With Both Deployment and Deferred Mode Option**
 
@@ -70,10 +71,15 @@ ON `beer-sample`(abv)
 USING GSI 
 WITH `{"nodes": ["172.16.1.174:9100"], "defer_build": true}`;```
 
+Index index_abv gets deployed on node 172.16.1.174:9000 and build is not triggered.
+
 ```CREATE INDEX index_type
 ON `beer-sample`(type) 
 USING GSI 
 WITH `{"nodes": ["127.0.0.1:9106"], "defer_build": true}`'```
 
+Index index_abv gets deployed on node 127.0.0.1:9001 and build is not triggered
+
 ```BUILD INDEX ON `beer-sample`(index_abv, index_type) USING GSI;```
 
+Build for indexes index_abv and index_type gets triggered.
