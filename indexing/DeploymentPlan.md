@@ -10,21 +10,21 @@
 ```CREATE INDEX index_type
 ON `beer-sample`(type) 
 USING GSI 
-WITH `{"nodes": ["node_addr"], "defer_build": true}`'```
+WITH `{"nodes": ["node_addr"], "defer_build": true}````
 
-**node_addr** refers to the couchbase cluster address for the index node ie. hostname:port(e.g. 127.0.0.1:8091, 127.0.0.1:9000 etc)
+**node_addr** refers to the couchbase cluster address for the index node ie. "hostname:port" (e.g. "127.0.0.1:8091", "127.0.0.1:9000" etc)
 
 **defer_build** determines if index build is immediate or after an explicit build index command
 
-**Note** Currently due to a bug the **node_addr** needs to have the **indexAdmin** port rather than the ns_server port. This port can be discovered for an Indexer Node from the nodeServices url (e.g.  http://127.0.0.1:9000/pools/default/nodeServices and look up indexAdmin port for the current node). If the indexAdmin port is 9100, the **node_addr** would be 127.0.0.1:9100.
+**Note** Currently due to a bug the **node_addr** needs to have the **indexAdmin** port rather than the ns_server port. This port can be discovered for an Indexer Node from the nodeServices url (e.g.  http://127.0.0.1:9000/pools/default/nodeServices and look up indexAdmin port for the current node). If the indexAdmin port is 9100, the **node_addr** would be "127.0.0.1:9100".
 
 ####Examples of Deployment Plan Usage
 
 #####Setup: 
  
-**Node1**(172.16.1.174:9000) - kv+index+n1ql  **indexAdmin - 9100**
+**Node1**(172.16.1.174:9000) - kv+index+n1ql  (**"indexAdmin":"9100"**)
 
-**Node2**(127.0.0.1:9001)    - index **indexAdmin - 9106**
+**Node2**(127.0.0.1:9001)    - index (**"indexAdmin":"9106"**)
 
 **Create Index On A Node With Deployment Plan**
 
@@ -78,7 +78,7 @@ ON `beer-sample`(type)
 USING GSI 
 WITH `{"nodes": ["127.0.0.1:9106"], "defer_build": true}`'```
 
-Index index_abv gets deployed on node 127.0.0.1:9001 and build is not triggered
+Index index_abv gets deployed on node 127.0.0.1:9001 and build is not triggered.
 
 ```BUILD INDEX ON `beer-sample`(index_abv, index_type) USING GSI;```
 
